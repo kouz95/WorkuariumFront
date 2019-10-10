@@ -12,4 +12,5 @@ function enterCheck(){
 function init(){
     enterCheck();
 }
+
 init();
