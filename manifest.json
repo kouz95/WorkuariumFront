@@ -1,0 +1,15 @@
+{
+    "name" : "Workuarium",
+    "description" : "description here",
+    "version" : "0.1",
+    "permissions": ["tabs"],
+    "manifest_version" : 2,
+    "sidebar_action" : {
+        "default_page": "default/index.html",
+        "default_icon": {               
+            "16": "default/images/icon16.png"
+        },
+        "default_title" : "Workuarium"
+    }
+    
+}
