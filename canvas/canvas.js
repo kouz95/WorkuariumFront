@@ -2,15 +2,16 @@ const canvasContainer = document.querySelector(".js-canvas");
 var canvas = canvasContainer.querySelector("canvas"),
 ctx = canvas.getContext('2d');
 
-canvas.width = 1470;
-canvas.height = 1030;
+canvas.width = 1280;
+canvas.height = 970;
+// canvas.id = "canvas";
 
-var background = new Image();
-background.src = "test.png";
+// var background = new Image();
+// background.src = "test.png";
 
-background.onload = function(){
-    ctx.drawImage(background,0,0);
-}
+// background.onload = function(){
+//     ctx.drawImage(background,0,0);
+// }
 
 
 

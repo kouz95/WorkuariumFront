@@ -1,0 +1,40 @@
+.canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.testPicture {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.toolButtonSensorContainer {
+    display: inline-block;
+}
+
+.toolButtonContainer {
+    display: none;
+}
+
+#toolButtonSensor,
+#toolButton {
+    position: fixed;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 50px;
+}
+
+#toolButtonSensor {
+    opacity: 0;
+    color: white;
+}
+
+.toolButtonSensorContainer:hover .toolButtonContainer{
+    display: block;
+}
