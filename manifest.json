@@ -1,5 +1,5 @@
 {
-    "name" : "HelpMe",
+    "name" : "HelpMeJson",
     "description" : "description here",
     "version" : "0.1",
     "permissions": ["tabs"],
@@ -9,7 +9,7 @@
         "default_icon": {               
             "16": "default/images/icon16.png"
         },
-        "default_title" : "HelpMe"
+        "default_title" : "HelpMeJson"
     }
     
 }
