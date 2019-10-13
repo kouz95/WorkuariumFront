@@ -22,15 +22,15 @@ $(document).ready(function () {
 
     $("#btn").click(function () {
         // 반환받은 obj를 JSON 객체로 변환
-        readJSON();
-        var jsonObj = JSON.stringify($("#form").serializeObject(), null, "\t");
+        var jsonObj = JSON.stringify($("#form").serializeObject());
+    
         console.log(jsonObj);
-
-        $.getJSON("test.json", async function(data) {
-            await console.log(data);
-            await data.member.push(jsonObj);
-            await readJSON();
+    
+        $.getJSON("test.json", function(data) {
+            data.member.push(JSON.parse(jsonObj));
+            readJSON(data);
         })
+        
     });
 });
 
@@ -43,8 +43,6 @@ function objToJson(formData) {
     return obj;
 }
 
-function readJSON() {
-    $.getJSON("test.json", function (data) {
+function readJSON(data) {
         console.log(data);
-    });
 }
