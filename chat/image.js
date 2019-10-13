@@ -1,3 +1,7 @@
+chrome.storage.sync.get(['name'], function(result) {
+    console.log('Value currently is ' + result.name);
+  });
+
 const imageContainer = document.querySelector(".js-image"),
     imageButton = imageContainer.querySelector("button");
 
