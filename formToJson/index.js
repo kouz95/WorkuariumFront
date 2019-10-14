@@ -26,7 +26,11 @@ $(document).ready(function () {
         console.log(jsonObj); // input
 
         function readJSON(obj){
-            console.log(obj);
+            $.each(obj.member, function(index, item){
+                var result = '';
+                result += index +' : ' + item.name + ', ' + item.age; 
+                console.log(result);
+            });
         }
 
         function pushJsonObj(data, callback) {
@@ -35,7 +39,11 @@ $(document).ready(function () {
         }
 
         function showJson(data, callback){
-            console.log(data);
+            $.each(data.member, function(index, item){
+                var result = '';
+                result += index +' : ' + item.name + ', ' + item.age; 
+                console.log(result);
+            });
             pushJsonObj(data, readJSON);
         }
 
@@ -52,6 +60,7 @@ $(document).ready(function () {
     //     console.log(jsonObj);
     
     //     $.getJSON("test.json", function(data) {
+    //         console.log(data);
     //         data.member.push(JSON.parse(jsonObj));
     //         readJSON(data);
     //     })
