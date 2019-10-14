@@ -19,30 +19,51 @@ $(document).ready(function () {
         } finally { }
         return obj;
     };
-
-    $("#btn").click(function () {
-        // 반환받은 obj를 JSON 객체로 변환
+    
+    $("#btn").click(function() {
         var jsonObj = JSON.stringify($("#form").serializeObject());
-    
-        console.log(jsonObj);
-    
-        $.getJSON("test.json", function(data) {
+
+        console.log(jsonObj); // input
+
+        function readJSON(obj){
+            console.log(obj);
+        }
+
+        function pushJsonObj(data, callback) {
             data.member.push(JSON.parse(jsonObj));
-            readJSON(data);
-        })
-        
+            callback(data);
+        }
+
+        function showJson(data, callback){
+            console.log(data);
+            pushJsonObj(data, readJSON);
+        }
+
+        $.getJSON("test.json", function(data){
+            showJson(data,pushJsonObj);
+        });
     });
+
+
+    // $("#btn").click(function () {
+    //     // 반환받은 obj를 JSON 객체로 변환
+    //     var jsonObj = JSON.stringify($("#form").serializeObject());
+    
+    //     console.log(jsonObj);
+    
+    //     $.getJSON("test.json", function(data) {
+    //         data.member.push(JSON.parse(jsonObj));
+    //         readJSON(data);
+    //     })
+        
+    // });
 });
 
-function objToJson(formData) {
-    var data = formData;
-    var obj = {};
-    $.each(data, function (idx, ele) {
-        obj[ele.name] = ele.value;
-    });
-    return obj;
-}
-
-function readJSON(data) {
-        console.log(data);
-}
+// function objToJson(formData) {
+//     var data = formData;
+//     var obj = {};
+//     $.each(data, function (idx, ele) {
+//         obj[ele.name] = ele.value;
+//     });
+//     return obj;
+// }
