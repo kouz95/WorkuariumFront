@@ -19,30 +19,60 @@ $(document).ready(function () {
         } finally { }
         return obj;
     };
-
-    $("#btn").click(function () {
-        // 반환받은 obj를 JSON 객체로 변환
+    
+    $("#btn").click(function() {
         var jsonObj = JSON.stringify($("#form").serializeObject());
-    
-        console.log(jsonObj);
-    
-        $.getJSON("test.json", function(data) {
+
+        console.log(jsonObj); // input
+
+        function readJSON(obj){
+            $.each(obj.member, function(index, item){
+                var result = '';
+                result += index +' : ' + item.name + ', ' + item.age; 
+                console.log(result);
+            });
+        }
+
+        function pushJsonObj(data, callback) {
             data.member.push(JSON.parse(jsonObj));
-            readJSON(data);
-        })
-        
+            callback(data);
+        }
+
+        function showJson(data, callback){
+            $.each(data.member, function(index, item){
+                var result = '';
+                result += index +' : ' + item.name + ', ' + item.age; 
+                console.log(result);
+            });
+            pushJsonObj(data, readJSON);
+        }
+
+        $.getJSON("test.json", function(data){
+            showJson(data,pushJsonObj);
+        });
     });
+
+
+    // $("#btn").click(function () {
+    //     // 반환받은 obj를 JSON 객체로 변환
+    //     var jsonObj = JSON.stringify($("#form").serializeObject());
+    
+    //     console.log(jsonObj);
+    
+    //     $.getJSON("test.json", function(data) {
+    //         console.log(data);
+    //         data.member.push(JSON.parse(jsonObj));
+    //         readJSON(data);
+    //     })
+        
+    // });
 });
 
-function objToJson(formData) {
-    var data = formData;
-    var obj = {};
-    $.each(data, function (idx, ele) {
-        obj[ele.name] = ele.value;
-    });
-    return obj;
-}
-
-function readJSON(data) {
-        console.log(data);
-}
+// function objToJson(formData) {
+//     var data = formData;
+//     var obj = {};
+//     $.each(data, function (idx, ele) {
+//         obj[ele.name] = ele.value;
+//     });
+//     return obj;
+// }
