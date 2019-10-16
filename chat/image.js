@@ -7,7 +7,7 @@ const imageContainer = document.querySelector(".js-image"),
 
 function popupImage(){
     whale.windows.create({
-        url: whale.extension.getURL("../canvas/index.html"), type: "popup", left: 10, top: 150, width: 1280, height: 970 
+        url: whale.extension.getURL("../testCanvas/index.html"), type: "popup", left: 10, top: 150, width: 1280, height: 970 
     })
 }
 
