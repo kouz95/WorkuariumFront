@@ -4,15 +4,17 @@ let strokeWidth = 4;
 let socket;
 
 let img;
-function preload() {
-    img = loadImage('./test.png');
-}
-
+// function preload() {
+//     img = loadImage('./test.png');
+// }
+$(document).ready(function() {
+  $('.pgwSlideshow').pgwSlideshow();
+});
 function setup() {
-  const cv = createCanvas(800, 800);
-  cv.position(300, 100);
+  const cv = createCanvas(980, 650);
+  cv.position(170, 10);
   
-  cv.background(img);
+  // cv.background(img);
 
   // Start the socket connection
   socket = io.connect('http://localhost:3000');

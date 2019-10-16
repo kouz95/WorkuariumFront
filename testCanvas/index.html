@@ -1,25 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Canvas</title>
-        <link rel="stylesheet" href="style.css"/>
-        <script type="text/javascript" src="../module/socket.io.js"></script>
-        <script type="text/javascript" src="../module/p5.min.js"></script>
-        <script type="text/javascript" src="../module/p5.dom.min.js"></script>
-        <script type="text/javascript" src="../module/p5.sound.min.js"></script>
-        <script type="text/javascript" src="sketch.js"></script>
-    </head>
-    <body>
-            <p>Choose color (# hex)</p>
-            <input type="text" name="custom_color" placeholder="#FFFFFF" id="pickcolor" class="call-picker" />
-            <div id="color-holder" class="color-holder call-picker"></div>
-            <button id="color-btn">Change color</button>
-            <br />
-            <p>Choose stroke width</p>
-            <input type="text" name="stroke_width" placeholder="4" id="stroke-width-picker" class="stroke_width_picker" />
-            <button id="stroke-btn">Change stroke width</button>
-            <p><button id="erase-btn">Change to eraser</button></p>
-            <p><button id="draw-btn">Change to draw</button></p>
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Canvas</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="../PgwSlideshow/pgwslideshow.min.css"/>
+
+    
+    <script type="text/javascript" src="../module/socket.io.js"></script>
+    <script type="text/javascript" src="../module/p5.min.js"></script>
+    <script type="text/javascript" src="../module/p5.dom.min.js"></script>
+    <script type="text/javascript" src="../module/p5.sound.min.js"></script>
+    <script type="text/javascript" src="../module/jquery.min.js"></script>
+    <script type="text/javascript" src="../PgwSlideshow/pgwslideshow.min.js"></script>
+    <script type="text/javascript" src="sketch.js"></script>
+</head>
+
+<body>
+    <ul class="pgwSlideshow">
+        <li><img src="./img/san-francisco.jpg" alt="San Francisco, USA" data-description="Golden Gate Bridge"></li>
+        <li><img src="./img/rio.jpg" alt="Rio de Janeiro, Brazil"></li>
+        <li><img src="./img/london_mini.jpg" alt="" data-large-src="./img/london.jpg"></li>
+        <li><img src="./img/new-york.jpg" alt=""></li>
+        <li><img src="./img/new-delhi.jpg" alt=""></li>
+        <li><img src="./img/paris.jpg" alt=""></li>
+        <li><img src="./img/sydney.jpg" alt=""></li>
+        <li><img src="./img/tokyo.jpg" alt=""></li>
+        <li><img src="./img/honk-kong.jpg" alt=""></li>
+        <li><img src="./img/dakar.jpg" alt=""></li>
+        <li><img src="./img/toronto.jpg" alt=""></li>
+        <li>
+            <a href="http://en.wikipedia.org/wiki/Monaco" target="_blank">
+                <img src="./img/monaco.jpg" alt="Monaco">
+            </a>
+        </li>
+    </ul>
+    
+    <p>Choose color (# hex)</p>
+    <input type="text" name="custom_color" placeholder="#FFFFFF" id="pickcolor" class="call-picker" />
+    <div id="color-holder" class="color-holder call-picker"></div>
+    <button id="color-btn">Change color</button>
+    <br />
+    <p>Choose stroke width</p>
+    <input type="text" name="stroke_width" placeholder="4" id="stroke-width-picker" class="stroke_width_picker" />
+    <button id="stroke-btn">Change stroke width</button>
+    <p><button id="erase-btn">Change to eraser</button></p>
+    <p><button id="draw-btn">Change to draw</button></p>
+
+
+</body>
+
 </html>
