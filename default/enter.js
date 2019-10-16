@@ -20,9 +20,9 @@ $(document).ready(function () {
     };
 
     $("#btn").click(function () {
-        var userName = JSON.stringify($("#form").serializeObject());
-        chrome.storage.sync.set({ name: userName }, function () {
-            console.log('userName is set to ' + userName);
+        var userData = JSON.stringify($("#form").serializeObject());
+        chrome.storage.sync.set({ data: userData }, function () {
+            console.log('Data is set to ' + userData);
         });
         enterChat();
     });
